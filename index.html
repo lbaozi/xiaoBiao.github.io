@@ -81,7 +81,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/09/Cordova/" title="Cordova" itemprop="url">Cordova</a>
+      <a href="/2015/07/09/Cordova/" title="Cordova使用" itemprop="url">Cordova使用</a>
   </h1>
   <p class="article-author">By
        
@@ -94,7 +94,8 @@
 </header>
     <div class="article-content">
         
-        <h3 id="一、_安装">一、 安装</h3><ol>
+        <p>本文只是对官方文档的翻译整理</p>
+<h3 id="一、_安装">一、 安装</h3><ol>
 <li>安装NodeJS,可以选择从<a href="https://nodejs.org/" target="_blank" rel="external">官网</a>下载安装也可以选择使用nvm安装   </li>
 <li>安装<a href="http://git-scm.com/" target="_blank" rel="external">Git</a>,Window下载安装即可,MAC可以使用<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew</a>安装</li>
 <li>安装Cordova CLI<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g cordova</span><br></pre></td></tr></table></figure>
@@ -123,7 +124,22 @@ cordova <span class="keyword">compile</span>
 </code></pre><h4 id="多平台属性">多平台属性</h4><p>以下属性支持多个平台,单并不不是所有平台</p>
 <p><code>DisallowOverscroll</code>取消webview的回弹效果,支持<code>iOS</code>和<code>Android</code>,默认值为<code>false</code></p>
 <pre><code>&lt;preference <span class="variable">name=</span><span class="string">"DisallowOverscroll"</span> <span class="variable">value=</span><span class="string">"true"</span>/&gt;
-</code></pre><p><code>BackgroundColor</code></p>
+</code></pre><p><code>BackgroundColor</code>设置APP的背景颜色,支持<code>Android</code>和<code>BlackBerry</code></p>
+<pre><code>&lt;preference <span class="variable">name=</span><span class="string">"BackgroundColor"</span> <span class="variable">value=</span><span class="string">"0xff0000ff"</span>/&gt;
+</code></pre><p><code>HideKeyboardFormAccessoryBar</code>键盘上方的表单工具条,用于切换表单上一项下一项,支持<code>iOS</code>,<code>BlackBerry</code>,默认值为<code>false</code></p>
+<pre><code>&lt;preference <span class="variable">name=</span><span class="string">"HideKeyboardFormAccessoryBar"</span> <span class="variable">value=</span><span class="string">"true"</span>/&gt;
+</code></pre><p><code>Orientation</code>锁定APP的方向,支持<code>Android</code>, <code>iOS</code>, <code>WP8</code>, <code>Amazon Fire OS</code>,<code>Firefox OS</code></p>
+<pre><code>&lt;preference <span class="variable">name=</span><span class="string">"Orientation"</span> <span class="variable">value=</span><span class="string">"landscape"</span> /&gt;
+</code></pre><h4 id="feature标签">feature标签</h4><p>使用命令行添加插件时会自动加入该标签,该标签只存在与各平台的confg.xml中</p>
+<h4 id="platform标签">platform标签</h4><p>用来指定特定平台的属性设置,例:</p>
+<pre><code><span class="tag">&lt;<span class="title">platform</span> <span class="attribute">name</span>=<span class="value">"android"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">preference</span> <span class="attribute">name</span>=<span class="value">"Fullscreen"</span> <span class="attribute">value</span>=<span class="value">"true"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">platform</span>&gt;</span>
+</code></pre><h3 id="四、_安装插件">四、 安装插件</h3><p>安装插件使用<code>cordova plugin add</code>命令,旧版插件库地址为:<a href="http://plugins.cordova.io/#/" target="_blank" rel="external">http://plugins.cordova.io/#/</a>,新版已经迁移至npm,在npm中搜索<a href="https://www.npmjs.com/search?q=ecosystem%3Acordova" target="_blank" rel="external">ecosystem:cordova</a>,旧版本的插件也已更名,例如Device插件旧版添加命令为</p>
+<pre><code>cordova plugin add org<span class="class">.apache</span><span class="class">.cordova</span><span class="class">.device</span>
+</code></pre><p>新版本为:</p>
+<pre><code>cordova <span class="keyword">plugin</span> add cordova-<span class="keyword">plugin</span>-device
+</code></pre><p>执行添加插件命令会为该项目下所有平台添加相应插件</p>
 
         
         
