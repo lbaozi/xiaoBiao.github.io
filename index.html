@@ -113,7 +113,7 @@ cordova <span class="built_in">platform</span> <span class="built_in">add</span>
 </code></pre><p>可以使用<code>cordova platform ls</code>查看已经添加的平台<br>使用<code>cordova platform rm</code>或<code>cordova platform rmove</code>移除平台  </p>
 <p><code>cordova prepare</code>命令会将修改的文件复制到所有的平台文件夹中准备进行编译,例如config.xml、www文件夹中的修改等,也可以在命令后添加平台代码,只更新指定平台的代码如<code>cordova prepare ios</code>   </p>
 <p><code>cordova compile</code>命令会编译所有的平台代码,也可使用各平台自己的开发工具进行编译.例如ios平台可以通过xcode打开platform/ios中的项目进行编译,该命令同样可以指定平台  </p>
-<p><code>cordova build</code>命令等价于以下两条命令</p>
+<p><code>cordova build</code>命令等价于以下两条命令会</p>
 <pre><code>cordova prepare
 cordova <span class="keyword">compile</span>
 </code></pre><p>创建项目并添加平台后即可通过各自的开发工具进行开发<br>ios平台需要MACOS环境,并安装xcode,可能还需要苹果的开发者帐号</p>
